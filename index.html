@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>行摄日记 | 分享我眼中的风景</title>
+    <title>认识一下我吧 👋</title>
     
     <script>
     !function (w, d, t) {
@@ -20,62 +20,77 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f5f7f6; 
-            color: #3e4442;
-            line-height: 1.8; 
+            background-color: #f7f7f7; 
+            color: #4a3b3b;
+            line-height: 1.7; 
         }
 
         /* 移动端主容器 */
         .container {
-            max-width: 480px; 
-            margin: 0 auto;
-            background: linear-gradient(180deg, #f9fbfb 0%, #edf2f0 100%);
+            max-width: 480px; margin: 0 auto;
+            background: linear-gradient(135deg, #fffaf7 0%, #ffe8e0 100%);
             min-height: 100vh;
-            padding: 35px 20px 40px 20px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.03);
+            padding: 40px 20px 120px 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
         }
 
-        /* 顶部标题区 */
-        .header { 
-            text-align: center; 
-            margin-bottom: 25px; 
-            border-bottom: 1px solid #e1e7e4;
-            padding-bottom: 15px;
-        }
-        .header h1 { font-size: 22px; color: #2c3e35; font-weight: 600; }
-        .header p { font-size: 14px; color: #7f8c85; margin-top: 5px; }
-
-        /* 风景文案卡片区 */
-        .scenery-card {
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 20px; 
-            border-radius: 14px; 
-            margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(44, 62, 53, 0.04);
-            border-left: 4px solid #6ba388; 
-        }
-        .scenery-card h2 { font-size: 16px; margin-bottom: 10px; color: #4f7c65; font-weight: 600; }
-        .scenery-card p { font-size: 14px; text-align: justify; color: #555e5a; margin-bottom: 15px; }
-        .scenery-card p:last-child { margin-bottom: 0; }
-
-        /* 行动呼吁文案 */
-        .cta-box {
-            text-align: center;
-            margin-top: 30px;
+        /* 首屏视觉区 */
+        .hero { text-align: center; margin-bottom: 30px; }
+        .profile-pic {
+            width: 120px; height: 120px; border-radius: 50%;
+            object-fit: cover; border: 4px solid #fff;
+            box-shadow: 0 8px 16px rgba(255, 160, 122, 0.2);
             margin-bottom: 15px;
         }
-        .cta-text { font-size: 14px; color: #555e5a; font-weight: 500; }
+        .hero h1 { font-size: 24px; margin-bottom: 8px; color: #332828; }
+        .hero p { font-size: 15px; color: #7a6565; }
 
-        /* WhatsApp 按钮与脉冲动画 */
+        /* 标签区 */
+        .tags {
+            display: flex; justify-content: center; flex-wrap: wrap;
+            gap: 10px; margin-bottom: 30px;
+        }
+        .tag {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 6px 14px; border-radius: 20px;
+            font-size: 13px; font-weight: 500; color: #d86c58; border: 1px solid #fbdcd5;
+        }
+
+        /* 自我介绍区 */
+        .about-section {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px; border-radius: 16px; margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(216, 108, 88, 0.05);
+            border-left: 4px solid #d86c58; 
+        }
+        .about-section h2 { font-size: 17px; margin-bottom: 12px; color: #d86c58; }
+        .about-section p { font-size: 14px; margin-bottom: 12px; text-align: justify; }
+        .about-section p:last-child { margin-bottom: 0; font-weight: 500; color: #d86c58; }
+
+        /* 照片墙 */
+        .gallery {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 10px; margin-bottom: 20px;
+        }
+        .gallery-img {
+            width: 100%; height: auto; aspect-ratio: 3 / 4;
+            border-radius: 12px; object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* 底部悬浮 WhatsApp 按钮区 */
+        .sticky-footer {
+            position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 100%; max-width: 480px;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px);
+            padding: 15px 20px 25px 20px; border-top: 1px solid #f2f2f2; text-align: center; z-index: 100;
+        }
+        .cta-text { font-size: 13px; color: #7a6565; margin-bottom: 10px; font-weight: 500; }
         .whatsapp-btn {
             display: flex; align-items: center; justify-content: center;
             background-color: #25D366; color: white; text-decoration: none;
-            padding: 15px 24px; border-radius: 30px; font-size: 16px; font-weight: bold;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); 
-            animation: pulse 2s infinite; 
-            cursor: pointer;
-            margin: 0 auto;
-            max-width: 90%;
+            padding: 14px 20px; border-radius: 30px; font-size: 16px; font-weight: bold;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); animation: pulse 2s infinite; cursor: pointer;
         }
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
@@ -87,29 +102,37 @@
 <body>
 
     <div class="container">
-        <header class="header">
-            <h1>行摄日记 ✨</h1>
-            <p>记录旅途中的风与温柔，分享我眼中的世界</p>
+        <header class="hero">
+            <img src="images/avatar.jpg" alt="我的头像" class="profile-pic">
+            <h1>你好！很高兴认识你 👋</h1>
+            <p>在喧嚣的世界里，期待与你开启一段真诚的对话。</p>
         </header>
 
-        <section class="scenery-card">
-            <h2>📍 关于洱海畔的午后</h2>
-            <p>坐在海西的沿道旁，看阳光揉碎在泛起微澜的水面上。那一刻，耳边只有风吹过树梢的沙沙声，整个世界都仿佛按下了慢放键。</p>
-            <p>常听人说，有些风景一个人看是安静定格，但如果能和同频的人相遇并实时分享，那份快乐和共鸣一定会悄悄翻倍。</p>
+        <section class="tags">
+            <span class="tag">✨ 目前单身</span>
+            <span class="tag">✈️ 热爱生活</span>
+            <span class="tag">🎵 寻找同频的你</span>
         </section>
 
-        <section class="scenery-card">
-            <h2>📍 记录山间清晨的雾</h2>
-            <p>喜欢清晨一个人漫步在静谧的林间小道上，呼吸着略带凉意、夹杂着泥土与青草清香的空气。每当走到视野开阔的观景台时，手心里握着的手机总会微微发热。</p>
-            <p>我想，最美好的状态，大概就是不需要任何刻意的伪装，彼此轻松自然，能一起聊聊去过的远方，也能听懂彼此生活里的那些小共鸣。</p>
+        <section class="about-section">
+            <h2>关于我</h2>
+            <p>目前单身。虽然每天的生活都很充实，但每当遇到有趣的风景、吃到好吃的餐厅时，总觉得如果能有一个人分享，快乐一定会翻倍。</p>
+            <p>我性格真诚、独立，对世界保持着好奇心。也许我们之前在各自的轨迹上忙碌，但我很期待能在这里遇到那个“刚刚好”的你。不需要刻意伪装，只希望能拥有一段轻松、同频的交往关系。</p>
+            <p>如果你也单身，并且想认识一个有趣的新朋友，现在就和我打个招呼吧！</p>
         </section>
 
-        <div class="cta-box">
-            <p class="cta-text">如果你也喜欢旅行和看风景，现在就来打个招呼吧 👇</p>
-        </div>
+        <section class="gallery">
+            <img src="images/photo1.jpg" alt="生活照1" class="gallery-img">
+            <img src="images/photo2.jpg" alt="生活照2" class="gallery-img">
+            <img src="images/photo3.jpg" alt="生活照3" class="gallery-img">
+            <img src="images/photo4.jpg" alt="生活照4" class="gallery-img">
+        </section>
+    </div>
 
+    <div class="sticky-footer">
+        <p class="cta-text">心动不如行动，点击下方按钮直接和我聊天 👇</p>
         <a href="#" id="whatsapp-btn" class="whatsapp-btn">
-            hhhh
+            💬 添加我的 whatsapp，认识一下
         </a>
     </div>
 
@@ -118,13 +141,13 @@
             
             // 1. WhatsApp 客服号码池配置
             const whatsappPool = [
-                 { phone: "60164281033", text: "你好！很高兴认识你👋" }, 
-                 { phone: "60189161642", text: "你好！很高兴认识你👋" },
-                 { phone: "60135191784", text: "你好！很高兴认识你👋" }
+                 { phone: "60107621760", text: "你好！很高兴认识你👋" }, 
+                 { phone: "60168146703", text: "你好！很高兴认识你👋" },
+                 { phone: "60162339528", text: "你好！很高兴认识你👋" }
             ];
 
             // 2. 24小时防撞单分配缓存逻辑
-            const LOCK_DURATION = 180 * 24 * 60 * 60 * 1000; 
+            const LOCK_DURATION = 180 * 24 * 60 * 60 * 1000; // 锁定24小时
             const now = new Date().getTime();
             let selectedTarget = null;
             const cachedShuntData = localStorage.getItem('wa_dating_assigned');
@@ -167,29 +190,28 @@
                 targetUrl = androidIntent; 
             }
             
+            // 绑定协议链接到悬浮按钮
             const whatsappBtn = document.getElementById('whatsapp-btn');
             whatsappBtn.href = targetUrl;
 
-            // 5. 基于点击动作的精准 Contact 追踪
+            // 5. 基于点击动作的精准 Contact 追踪 (已更新为 TikTok 代码)
             let eventFired = false;
             function fireContactEvent() {
+                // 检查 ttq 对象是否存在，确保代码安全执行
                 if (!eventFired && typeof ttq !== 'undefined') {
+                    // 触发 TikTok 像素的 Contact 事件并传入自定义参数
                     ttq.track('Contact', {
-                        assigned_whatsapp: targetPhone,
-                        user_os: userOS,
-                        content_name: 'dating_profile_add'
+                        assigned_whatsapp: targetPhone,       
+                        user_os: userOS,                      
+                        content_name: 'dating_profile_add'    
                     });
                     eventFired = true; 
                 }
             }
 
-            // 监听按钮点击事件 (带延迟跳转)
-            whatsappBtn.addEventListener('click', function(e) {
-                e.preventDefault(); 
+            // 监听按钮点击事件
+            whatsappBtn.addEventListener('click', function() {
                 fireContactEvent();
-                setTimeout(function() {
-                    window.location.href = targetUrl;
-                }, 300);
             });
 
         });
